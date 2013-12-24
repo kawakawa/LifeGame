@@ -67,6 +67,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Cell.cs" />
     <Compile Include="Model\IPiece.cs" />
     <Compile Include="Model\LifeBoard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
