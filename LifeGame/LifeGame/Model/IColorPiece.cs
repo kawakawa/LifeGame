@@ -13,6 +13,6 @@ namespace LifeGame.Model
     interface IColorPiece:IPiece
     {
         Color Color { get; }
-    }
+    
     }
 }
