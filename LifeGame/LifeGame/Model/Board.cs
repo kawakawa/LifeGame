@@ -87,7 +87,27 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// (x,y)から、＿Pieceへのインデックスを求める
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int ToIndex(int x, int y)
+        {
+            var result = x + y*(Xsize + 2);
+            return result;
+        }
 
+        /// <summary>
+        /// Locationから_Pieceのインデックスを求める
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <returns></returns>
+        public int ToIndex(Location loc)
+        {
+            return ToIndex(loc.X, loc.Y);
+        }
 
 
 
