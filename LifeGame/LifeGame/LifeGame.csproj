@@ -76,6 +76,7 @@
     <Compile Include="Model\LifeBoard.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\Pieces.cs" />
+    <Compile Include="Model\WhitePiece.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
