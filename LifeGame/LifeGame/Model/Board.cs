@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace LifeGame.Model
 {
@@ -69,6 +70,25 @@ namespace LifeGame.Model
             this._validIndexes = board._validIndexes;
             this._pieces = board._pieces;
         }
+        
+
+
+        //イベント発行
+        protected void OnChanged(Location loc, IPiece piece)
+        {
+            if (Changed != null)
+            {
+                var args=new BoardChangedEventArgs
+                {
+                    Location = loc,
+                    Piece=piece
+                };
+                Changed(this, args);
+            }
+        }
+
+
+
 
 
         /// <summary>
