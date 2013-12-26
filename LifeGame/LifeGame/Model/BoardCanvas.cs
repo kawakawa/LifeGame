@@ -92,6 +92,9 @@ namespace LifeGame.Model
         private bool _synchronize;
 
 
+        /// <summary>
+        /// Boardオブジェクトと同期するか否か （初期値：同期する）
+        /// </summary>
         public bool Synchronize
         {
             get{return  this._synchronize}
