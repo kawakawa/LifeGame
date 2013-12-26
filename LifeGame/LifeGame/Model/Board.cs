@@ -258,10 +258,16 @@ namespace LifeGame.Model
         }
 
 
+        /// <summary>
+        /// 指定したIPieceが置いてあるLocationを列挙する
+        /// </summary>
+        /// <param name="piece"></param>
+        /// <returns></returns>
         public IEnumerable<Location> GetLocations(IPiece piece)
         {
             var type = piece.GetType();
-            //var query=this.getValidLocations().Where(new=)
+            var query = this.GetValidLocations().Where(loc => this[loc].GetType() == type);
+            return query;
         }
 
 
