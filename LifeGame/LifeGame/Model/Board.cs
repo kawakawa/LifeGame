@@ -110,23 +110,6 @@ namespace LifeGame.Model
         }
 
 
-
-        /// <summary>
-        /// 本来のボード上の位置かどうかを調べる
-        /// </summary>
-        /// <param name="location"></param>
-        /// <returns></returns>
-        private bool IsOnBoard(Location location)
-        {
-            int x = location.X;
-            int y = location.Y;
-
-            var checkX = (1 <= x && x <= Xsize);
-            var checkY = (1 <= y && y <= Ysize);
-
-            return checkX && checkY;
-        }
-
         /// <summary>
         /// IndexからLocationを求める
         /// </summary>
@@ -137,6 +120,38 @@ namespace LifeGame.Model
             var lacation = new Location(index%(Xsize + 2), index/(Ysize + 2));
             return lacation;
         }
+
+        /// <summary>
+        /// 本来のボード上の位置かどうかを調べる
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <returns></returns>
+        protected bool IsOnBoard(Location loc)
+        {
+            int x = loc.X;
+            int y = loc.Y;
+
+            var checkX = (1 <= x && x <= Xsize);
+            var checkY = (1 <= y && y <= Ysize);
+
+            return checkX && checkY;
+        }
+
+        /// <summary>
+        /// 本来のボード上の位置(index)かどうかを調べる
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        protected bool IsOnBoard(int index)
+        {
+            if (0 <= index && index < _pieces.Length)
+            {
+                return this._pieces[index] != Pieces.Guard;
+            }
+            return false;
+        }
+
+  
 
     }
 }
