@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -175,6 +177,37 @@ namespace LifeGame.Model
             Panel.Children.Add(line);
         }
 
+        /// <summary>
+        /// 円オブジェクトを生成する （Pieceのデフォルト表示を担当)
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <param name="color"></param>
+        /// <returns></returns>
+        public Ellipse CreateEllipse(Location loc, Color color)
+        {
+            var eli = new Ellipse();
+            eli.Name = PieceName(loc);
+            eli.Height = CellWidth*0.85;
+            eli.Width = CellHeight*0.85;
+            eli.Fill=new SolidColorBrush(color);
+            eli.Stroke = new SolidColorBrush(Colors.DarkGray);
+
+            var pt = ToPoint(loc);
+            Canvas.SetLeft(eli,pt.X+CellWidth/2-eli.ActualWidth/2);
+            Canvas.SetTop(eli,pt.Y+CellHeight/2-eli.ActualHeight/2);
+
+            return eli;
+        }
+
+        /// <summary>
+        /// Pieceオブジェクトの名前を生成する
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <returns></returns>
+        private string PieceName(Location loc)
+        {
+            return string.Format("x{0}y{1}", loc.X, loc.Y);
+        }
 
 
 
@@ -183,5 +216,27 @@ namespace LifeGame.Model
 
 
 
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Locationからグラフィックの座標であるPointへ変換
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <returns></returns>
+        public Point ToPoint(Location loc)
+        {
+            return new Point()
+            {
+                X=CellWidth*(loc.X-1),
+                Y=CellHeight*(loc.Y-1)
+            };
+        }
     }
 }
