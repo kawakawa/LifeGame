@@ -120,7 +120,10 @@ namespace LifeGame.Model
         }
 
 
-
+        public void ChangeBoard(Board board)
+        {
+            this.Board = board;
+        }
 
 
 
