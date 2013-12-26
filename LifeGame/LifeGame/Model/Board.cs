@@ -244,6 +244,17 @@ namespace LifeGame.Model
         }
 
 
+        /// <summary>
+        /// EmptyPieces以外の全てのPieceを列挙する
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<IPiece> GetAllPieces()
+        {
+            var query = this._validIndexes.Select(idx => this[idx])
+                .Where(n => n != Pieces.Empty);
+
+            return query;
+        }
 
 
 
