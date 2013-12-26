@@ -126,7 +126,33 @@ namespace LifeGame.Model
         }
 
 
+        /// <summary>
+        /// 罫線を引く
+        /// </summary>
+        /// <param name="lineType"></param>
+        public void DrawRuledLines(BoardType lineType)
+        {
+            this.BoardType = lineType;
+            int startx = (lineType == BoardType.Chess)
+                ? 0
+                : (int) (CellHeight/2);
 
+            for (double i = startx; i <= Panel.ActualHeight; i += CellHeight)
+            {
+                DrawLine(0, i, Panel.ActualWidth, i);
+            }
+
+            
+            int starty = (lineType == BoardType.Chess)
+                ? 0
+                : (int) (CellWidth/2);
+
+            for (double i = starty; i <= Panel.ActualWidth; i += CellWidth)
+            {
+                DrawLine(i, 0, i, Panel.ActualHeight);
+            }
+
+        }
 
 
 
