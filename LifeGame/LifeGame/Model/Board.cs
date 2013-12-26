@@ -170,6 +170,54 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// インデクサ(x,y）の位置の要素へアクセスする
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public IPiece this[int index]
+        {
+            get
+            {
+                return this._pieces[index];
+            }
+            set
+            {
+                PutPiece(index,value);
+            }
+        }
+
+        /// <summary>
+        /// インデクサ(x,y）の位置の要素へアクセスする
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public IPiece this[int x,int y]
+        {
+            get
+            {
+                return this[ToIndex(x, y)];
+            }
+            set
+            {
+                 this[ToIndex(x, y)] = value; 
+            }
+        }
+
+        public IPiece this[Location loc]
+        {
+            get
+            {
+                return this[loc.X, loc.Y];
+            }
+            set
+            {
+                this[loc.X, loc.X] = value;
+            }
+        }
+
+
     }
 }
 
