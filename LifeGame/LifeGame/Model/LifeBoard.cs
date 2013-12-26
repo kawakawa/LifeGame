@@ -84,6 +84,31 @@ namespace LifeGame.Model
         }
 
 
+        public int Survive()
+        {
+            int count = 0;
+            foreach (var loc in this.GetValidLocations())
+            {
+                var cell = this[loc] as Cell;
+                if(cell.Survive(CountAround(loc)) == true)
+                {
+                    count++;
+                }
+            }
+
+            if (count > 0)
+            {
+                foreach (var loc in this.GetValidLocations())
+                {
+                    var cell = this[loc] as Cell;
+                    if (cell.NextStage() == true)
+                    {
+                        OnChanged(loc,cell);
+                    }
+                }
+            }
+            return count;
+        }
 
 
     }
