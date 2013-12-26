@@ -86,9 +86,35 @@ namespace LifeGame.Model
             _synchronize = true;
         }
 
+        /// <summary>
+        /// 同期用オブジェクト
+        /// </summary>
+        private bool _synchronize;
 
 
-
+        public bool Synchronize
+        {
+            get{return  this._synchronize}
+            set
+            {
+                if (value == true)
+                {
+                    if (_synchronize == false)
+                    {
+                        this.Board.Changed += new EventHandler<BoardChangedEventArgs>(board_Changed);
+                        _synchronize = true;
+                    }
+                }
+                else
+                {
+                    if (_synchronize == true)
+                    {
+                        this.Board.Changed -=new EventHandler<BoardChangedEventArgs>(board_Changed);
+                        _synchronize = false;
+                    }
+                }
+            }
+        }
 
 
 
