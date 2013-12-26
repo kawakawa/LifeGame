@@ -270,6 +270,17 @@ namespace LifeGame.Model
             return query;
         }
 
+        /// <summary>
+        /// 指定したIPieceがおいてあるIndexを列挙する
+        /// </summary>
+        /// <param name="piece"></param>
+        /// <returns></returns>
+        public IEnumerable<int> GetIndexes(IPiece piece)
+        {
+            var type = piece.GetType();
+            var query = this._validIndexes.Where(idx => this[idx].GetType() == type);
+            return query;
+        }
 
         /// <summary>
         /// 番兵部分を除いた有効なLocationを列挙する
@@ -277,9 +288,19 @@ namespace LifeGame.Model
         /// <returns></returns>
         public IEnumerable<Location> GetValidLocations()
         {
-            var query= _validIndexes.Select(ix => ToLocation(ix));
+            var query = _validIndexes.Select(n => ToLocation(n));
             return query;
         }
+
+        /// <summary>
+        /// 番兵部分を除いた有効なIndexを列挙する
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<int> GetValidIndexes()
+        {
+            return _validIndexes;
+        }
+
 
 
         /// <summary>
