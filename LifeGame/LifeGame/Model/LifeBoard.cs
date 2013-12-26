@@ -32,6 +32,16 @@ namespace LifeGame.Model
             }
         }
 
+        //反転する
+        public void Reverse(Location loc)
+        {
+            var cell = this[loc] as Cell;
+            cell.Toggle();
+            OnChanged(loc,cell);
+        }
+
+
+
 
 
     }
