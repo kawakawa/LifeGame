@@ -324,7 +324,7 @@ namespace LifeGame.Model
         }
 
         /// <summary>
-        /// 何もおかれていないLocationを列挙する
+        /// 何も置かれていないLocationを列挙する
         /// </summary>
         /// <returns></returns>
         public IEnumerable<Location> GetVacantLocations()
