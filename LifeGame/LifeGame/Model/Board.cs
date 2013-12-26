@@ -116,7 +116,7 @@ namespace LifeGame.Model
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
-        private Location ToLocation(int index)
+        public Location ToLocation(int index)
         {
             var lacation = new Location(index%(Xsize + 2), index/(Ysize + 2));
             return lacation;
