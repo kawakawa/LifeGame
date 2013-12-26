@@ -222,6 +222,16 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// 全てのPieceをクリアする
+        /// </summary>
+        public virtual void ClearAll()
+        {
+            foreach (var ix in GetOccupiedIndexes())
+            {
+                ClearPiece(ToLocation(ix));
+            }
+        }
 
     }
 }
