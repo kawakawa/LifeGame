@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace LifeGame.Model
 {
@@ -22,5 +23,62 @@ namespace LifeGame.Model
     // PanelにUiElementを動的に追加削除することで描画を行っている。
     public class BoardCanvas
     {
+        /// <summary>
+        /// １つのCellの幅
+        /// </summary>
+        protected double CellWidth { get;private set:}
+
+        /// <summary>
+        /// １つのCellの高さ
+        /// </summary>
+        protected double CellHeight { get; private set; }
+
+        /// <summary>
+        /// 縦方向のCell数
+        /// </summary>
+        protected int Ysize { get; private set; }
+
+        /// <summary>
+        /// 横方向のCell数
+        /// </summary>
+        protected int Xsize { get; private set; }
+
+        /// <summary>
+        /// 罫線の種類（基盤かチェス盤）
+        /// </summary>
+        protected BoardType BoardType { get; private set; }
+
+
+        /// <summary>
+        /// 対象となるPanelオブジェクト
+        /// </summary>
+        protected Panel Panel { get; private set; }
+
+        /// <summary>
+        /// 対象となるBoardオブジェクト
+        /// </summary>
+        protected Board Board { get;private set:}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
