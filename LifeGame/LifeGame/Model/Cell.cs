@@ -21,7 +21,6 @@ namespace LifeGame.Model
     /// 
     /// 使い方として、すべてのCellに対してSurviveを呼び出した後に、
     /// すべてのCellに対してNextStageを呼び出すことになります。
-    /// 
     /// </remarks>
     public class Cell:IPiece
     {
