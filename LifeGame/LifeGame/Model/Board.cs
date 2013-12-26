@@ -233,6 +233,15 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// x,yの位置をクリアする
+        /// </summary>
+        /// <param name="loc"></param>
+        public virtual void ClearPiece(Location loc)
+        {
+            this[loc.X, loc.Y] = Pieces.Empty;
+        }
+
     }
 }
 
