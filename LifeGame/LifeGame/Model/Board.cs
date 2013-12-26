@@ -342,6 +342,20 @@ namespace LifeGame.Model
             return GetIndexes(Pieces.Empty);
         }
 
+        /// <summary>
+        /// 指定した方向の位置を番兵が見つかるまで取得する
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="direction"></param>
+        /// <returns></returns>
+        public IEnumerable<int> GetSeriesIndexes(int index, int direction)
+        {
+            for (int pos = index; this[pos] != Pieces.Guard; pos += direction)
+            {
+                yield return pos;
+            }
+        }
+
     }
 }
 
