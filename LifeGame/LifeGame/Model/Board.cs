@@ -161,7 +161,7 @@ namespace LifeGame.Model
         {
             if (IsOnBoard(index) == true)
             {
-                this._pieces[index] = piece;
+                this[index] = piece;
                 OnChanged(ToLocation(index),piece);
             }
             else
