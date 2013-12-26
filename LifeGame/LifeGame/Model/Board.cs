@@ -301,6 +301,16 @@ namespace LifeGame.Model
             return _validIndexes;
         }
 
+        /// <summary>
+        /// 駒が置かれているLocationを列挙する
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Location> GetOccupiedLocations()
+        {
+            var query = this.GetOccupiedIndexes()
+                .Select(idx => ToLocation(idx));
+            return query;
+        }
 
 
         /// <summary>
