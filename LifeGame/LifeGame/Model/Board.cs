@@ -205,6 +205,11 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// インデクサ(x,y）の位置の要素へアクセスする
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <returns></returns>
         public IPiece this[Location loc]
         {
             get
