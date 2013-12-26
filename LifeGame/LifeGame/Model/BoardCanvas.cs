@@ -16,7 +16,10 @@ namespace LifeGame.Model
         Chess
     }
 
-
+    // Boardおよび駒(PIece)の表示を担当する
+    // BoardオブジェクトからChangeイベントを受け取ると、変更されたセルのPieceを描画する。
+    // その他Board/Pieceを描画するための各種メソッドを用意。
+    // PanelにUiElementを動的に追加削除することで描画を行っている。
     public class BoardCanvas
     {
     }
