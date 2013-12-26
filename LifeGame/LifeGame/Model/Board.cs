@@ -330,6 +330,7 @@ namespace LifeGame.Model
         public IEnumerable<Location> GetVacantLocations()
         {
             var query = this._validIndexes.Select(idx => ToLocation(idx));
+            return query;
         }
 
     }
