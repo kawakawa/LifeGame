@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace LifeGame.Model
 {
@@ -152,6 +154,25 @@ namespace LifeGame.Model
                 DrawLine(i, 0, i, Panel.ActualHeight);
             }
 
+        }
+
+        /// <summary>
+        /// 線を引く
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="y1"></param>
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        private void DrawLine(double x1,int y1,double x2,double y2)
+        {
+            var line = new Line();
+            line.X1 = x1;
+            line.Y1 = y1;
+            line.X2 = x2;
+            line.Y2 = y2;
+
+            line.Stroke = new SolidColorBrush(Colors.LightGray);
+            Panel.Children.Add(line);
         }
 
 
