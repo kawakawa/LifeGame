@@ -209,7 +209,23 @@ namespace LifeGame.Model
             return string.Format("x{0}y{1}", loc.X, loc.Y);
         }
 
+        /// <summary>
+        /// 矩形を描く
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <param name="color"></param>
+        public void DrawRectangle(Point p1, Point p2, Color color)
+        {
+            this.Panel.Children.Add(CreateRectangle(p1, p2, color));
+        }
 
+
+
+        public Rectangle CreateRectangle(Point p1,Point p2,Color color)
+        {
+ 	        
+        }
 
 
 
