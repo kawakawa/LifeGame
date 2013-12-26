@@ -40,7 +40,14 @@ namespace LifeGame.Model
             OnChanged(loc,cell);
         }
 
-
+        public override void ClearAll()
+        {
+            base.ClearAll();
+            foreach (var loc in this.GetValidLocations())
+            {
+                this[loc]=new Cell();
+            }
+        }
 
 
 
