@@ -233,6 +233,7 @@ namespace LifeGame.Model
             }
         }
 
+
         /// <summary>
         /// x,yの位置をクリアする
         /// </summary>
@@ -240,6 +241,20 @@ namespace LifeGame.Model
         public virtual void ClearPiece(Location loc)
         {
             this[loc.X, loc.Y] = Pieces.Empty;
+        }
+
+
+
+
+
+        /// <summary>
+        /// 駒が置かれているLocationを列挙する
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerable<int> GetOccupiedIndexes()
+        {
+            var que = this._validIndexes.Where(index => this[index] != Pieces.Empty);
+            return que;
         }
 
     }
