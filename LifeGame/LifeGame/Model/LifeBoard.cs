@@ -49,6 +49,41 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// 周りの生存者の数を数える
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <returns></returns>
+        protected int CountAround(Location loc)
+        {
+            int[] directions =
+            {
+                -this.Xsize-3,-this.Xsize-2,-this.Xsize-1,
+                -1,
+                +1,
+                this.Xsize+1,
+                this.Xsize+2,
+                this.Xsize+3
+            };
+
+            int count = 0;
+            var index = ToIndex(loc);
+            foreach (var d in directions)
+            {
+                var nix = (index + d);
+                var loc2 = this.ToLocation(index + d);
+                var cell = this[loc2] as Cell;
+
+                if (cell != null && cell.IsAlive)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+
 
 
     }
