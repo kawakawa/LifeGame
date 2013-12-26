@@ -333,6 +333,15 @@ namespace LifeGame.Model
             return query;
         }
 
+        /// <summary>
+        /// 何も置かれていなIndexを列挙する
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<int> GetVacantIndexes()
+        {
+            return GetIndexes(Pieces.Empty);
+        }
+
     }
 }
 
