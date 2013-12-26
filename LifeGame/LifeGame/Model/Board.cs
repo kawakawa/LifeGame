@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Serialization;
 
 namespace LifeGame.Model
@@ -256,6 +257,23 @@ namespace LifeGame.Model
             return query;
         }
 
+
+        public IEnumerable<Location> GetLocations(IPiece piece)
+        {
+            var type = piece.GetType();
+            //var query=this.getValidLocations().Where(new=)
+        }
+
+
+        /// <summary>
+        /// 番兵部分を除いた有効なLocationを列挙する
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Location> GetValidLocations()
+        {
+            var query= _validIndexes.Select(ix => ToLocation(ix));
+            return query;
+        }
 
 
         /// <summary>
