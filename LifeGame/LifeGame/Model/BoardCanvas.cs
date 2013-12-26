@@ -60,7 +60,31 @@ namespace LifeGame.Model
         protected Board Board { get;private set:}
 
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="board"></param>
+        public BoardCanvas(Panel panel, Board board)
+        {
+            this.Panel = panel;
+            this.Board = board;
 
+            Ysize = board.Ysize;
+            Xsize = board.Xsize;
+
+            this.CellWidth = (panel.ActualWidth - 1)/Xsize;
+            this.CellHeight = (panel.ActualHeight - 1)/Ysize;
+
+            foreach (var loc in board.GetValidLocations())
+            {
+                UpdatePiece(loc, board[loc]);
+            }
+
+            this.Board.Changed += EventHandler<BoardChangedEventArgs>(board_Changed);
+
+            _synchronize = true;
+        }
 
 
 
