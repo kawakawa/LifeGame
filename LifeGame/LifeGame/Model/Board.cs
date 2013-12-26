@@ -151,7 +151,24 @@ namespace LifeGame.Model
             return false;
         }
 
-  
+        /// <summary>
+        /// Pieceを置く_piecesの要素を変更するのはこのメソッドだけ（コンストラクタは除く）。
+        /// override可能
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="piece"></param>
+        protected virtual void PutPiece(int index, IPiece piece)
+        {
+            if (IsOnBoard(index) == true)
+            {
+                this._pieces[index] = piece;
+                OnChanged(ToLocation(index),piece);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+        }
 
     }
 }
