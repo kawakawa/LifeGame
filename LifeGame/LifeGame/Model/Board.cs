@@ -356,6 +356,94 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// 上方向
+        /// </summary>
+        public int UpDirection
+        {
+            get
+            {
+                return this.Xsize + 2;
+            }
+        }
+
+        /// <summary>
+        /// 下方向
+        /// </summary>
+        public int DownDirection
+        {
+            get
+            {
+                return this.Xsize + 2;
+            }
+        }
+
+        /// <summary>
+        /// 左方向
+        /// </summary>
+        public int LeftDirection
+        {
+            get
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// 右方向
+        /// </summary>
+        public int RightDirection
+        {
+            get
+            {
+                return 1;
+            }
+        }
+
+        /// <summary>
+        /// 右上方向
+        /// </summary>
+        public int UpperRightDirection
+        {
+            get
+            {
+                return UpDirection + 1;
+            }
+        }
+
+        /// <summary>
+        /// 左上方向
+        /// </summary>
+        public int UpperLeftDirection
+        {
+            get
+            {
+                return UpDirection - 1;
+            }
+        }
+
+        /// <summary>
+        /// 右下方向
+        /// </summary>
+        public int LowerRightDirection
+        {
+            get
+            {
+                return DownDirection + 1;
+            }
+        }
+
+        /// <summary>
+        /// 左下方向
+        /// </summary>
+        public int LowerLeftDirection
+        {
+            get
+            {
+                return DownDirection - 1;
+            }
+        }
+
     }
 }
 
