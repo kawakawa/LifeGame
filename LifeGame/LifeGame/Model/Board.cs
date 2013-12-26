@@ -323,6 +323,15 @@ namespace LifeGame.Model
             return que;
         }
 
+        /// <summary>
+        /// 何もおかれていないLocationを列挙する
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Location> GetVacantLocations()
+        {
+            var query = this._validIndexes.Select(idx => ToLocation(idx));
+        }
+
     }
 }
 
