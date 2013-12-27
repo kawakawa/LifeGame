@@ -379,7 +379,7 @@ namespace LifeGame.Model
         /// <returns></returns>
         public Point ToPoint(Location loc)
         {
-            return new Point()
+            return new Point
             {
                 X=CellWidth*(loc.X-1),
                 Y=CellHeight*(loc.Y-1)
