@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace LifeGame.Model
 {
@@ -33,6 +35,26 @@ namespace LifeGame.Model
             {
                 RemovePiece(loc);
             }
+        }
+
+        /// <summary>
+        /// 四角形を生成する
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <param name="color"></param>
+        private void DrawLife(Location loc, Color color)
+        {
+            Point p1 = ToPoint(loc);
+            Point p2= new Point(p1.X+this.CellWidth-1,p1.Y+this.CellHeight-1);
+            var rect = new Rectangle()
+            {
+                Name = this.PieceName(loc),
+                Stroke = new SolidColorBrush(color),
+                Fill = new SolidColorBrush(color),
+                Margin = new Thickness(p1.X,p1.Y,p2.X,p2.Y),
+                Width = p2.X-p1.X,
+                Height = p2.Y-p1.Y,
+            };
         }
     }
 }
