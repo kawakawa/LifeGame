@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LifeGame.Model
+namespace LifeGame.Model.Piece
 {
     /// <summary>
     /// 良く利用する駒たち
