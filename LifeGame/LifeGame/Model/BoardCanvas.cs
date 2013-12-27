@@ -386,5 +386,26 @@ namespace LifeGame.Model
                 Y=CellHeight*(loc.Y-1)
             };
         }
+
+
+        public Location ToLocation(Point pt)
+        {
+            var x = pt.X;
+            var y = pt.Y;
+
+            int a = Math.Max(0, (int) (x/CellWidth));
+            if (a >= Xsize)
+            {
+                a = Xsize - 1;
+            }
+
+            int b = Math.Max(0, (int) (y/CellHeight));
+            if (b >= Ysize)
+            {
+                b = Ysize - 1;
+            }
+
+            return  new Location(a+1,b+1);
+        }
     }
 }
