@@ -167,7 +167,7 @@ namespace LifeGame.Model
         /// <param name="y1"></param>
         /// <param name="x2"></param>
         /// <param name="y2"></param>
-        private void DrawLine(double x1,int y1,double x2,double y2)
+        private void DrawLine(double x1, double y1, double x2, double y2)
         {
             var line = new Line();
             line.X1 = x1;
