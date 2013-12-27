@@ -327,7 +327,7 @@ namespace LifeGame.Model
                     Panel.Children.Remove(obj as UIElement);
                 }
 
-                if (piece is EmptyPiece || piece is GuardPiece)
+                if (piece is GuardPiece)
                 {
                     return;
                 }
