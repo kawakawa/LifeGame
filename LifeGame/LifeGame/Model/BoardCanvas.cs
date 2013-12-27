@@ -165,13 +165,15 @@ namespace LifeGame.Model
         /// <param name="y2"></param>
         private void DrawLine(double x1, double y1, double x2, double y2)
         {
-            var line = new Line();
-            line.X1 = x1;
-            line.Y1 = y1;
-            line.X2 = x2;
-            line.Y2 = y2;
+            var line = new Line
+            {
+                X1 = x1,
+                Y1 = y1,
+                X2 = x2,
+                Y2 = y2,
+                Stroke = new SolidColorBrush(Colors.LightGray)
+            };
 
-            line.Stroke = new SolidColorBrush(Colors.LightGray);
             Panel.Children.Add(line);
         }
 
