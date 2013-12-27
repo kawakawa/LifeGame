@@ -206,7 +206,7 @@ namespace LifeGame.Model
         /// </summary>
         /// <param name="loc"></param>
         /// <returns></returns>
-        private string PieceName(Location loc)
+        protected string PieceName(Location loc)
         {
             return string.Format("x{0}y{1}", loc.X, loc.Y);
         }
