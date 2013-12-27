@@ -31,7 +31,7 @@ namespace LifeGame.Model
         /// <summary>
         /// １つのCellの幅
         /// </summary>
-        protected double CellWidth { get;private set:}
+        protected double CellWidth { get; private set; }
 
         /// <summary>
         /// １つのCellの高さ
@@ -62,7 +62,7 @@ namespace LifeGame.Model
         /// <summary>
         /// 対象となるBoardオブジェクト
         /// </summary>
-        protected Board Board { get;private set:}
+        protected Board Board { get; private set; }
 
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace LifeGame.Model
         /// </summary>
         public bool Synchronize
         {
-            get{return  this._synchronize}
+            get { return this._synchronize; }
             set
             {
                 if (value == true)
