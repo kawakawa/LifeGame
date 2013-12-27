@@ -387,7 +387,11 @@ namespace LifeGame.Model
             };
         }
 
-
+        /// <summary>
+        /// グラフィックの座標であるPointからLocationへ変換
+        /// </summary>
+        /// <param name="pt"></param>
+        /// <returns></returns>
         public Location ToLocation(Point pt)
         {
             var x = pt.X;
