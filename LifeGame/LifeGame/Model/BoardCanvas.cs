@@ -82,7 +82,7 @@ namespace LifeGame.Model
                 UpdatePiece(loc, board[loc]);
             }
 
-            this.Board.Changed += new EventHandler<BoardChangedEventArgs>(board_Changed);
+            this.Board.Changed += board_Changed;
 
             _synchronize = true;
         }
