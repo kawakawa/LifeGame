@@ -55,6 +55,13 @@ namespace LifeGame.Model
                 Width = p2.X-p1.X,
                 Height = p2.Y-p1.Y,
             };
+
+            this.Panel.Children.Add(rect);
+            if (this.Panel.FindName(rect.Name) != null)
+            {
+                this.Panel.UnregisterName(rect.Name);
+            }
+            this.Panel.RegisterName(rect.Name,rect);
         }
     }
 }
