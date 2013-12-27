@@ -219,7 +219,7 @@ namespace LifeGame.Model
             }
             set
             {
-                this[loc.X, loc.X] = value;
+                this[loc.X, loc.Y] = value;
             }
         }
 
