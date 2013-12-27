@@ -232,9 +232,11 @@ namespace LifeGame.Model
         /// <returns></returns>
         public Rectangle CreateRectangle(Point p1,Point p2,Color color)
         {
-            var rect = new Rectangle();
-            rect.Name = RectangleName(p1);
-            rect.Stroke=new SolidColorBrush(color);
+            var rect = new Rectangle
+            {
+                Name = RectangleName(p1),
+                Stroke = new SolidColorBrush(color)
+            };
 
             double x1 = Math.Min(p1.X, p2.X);
             double y1 = Math.Min(p1.Y, p2.Y);
