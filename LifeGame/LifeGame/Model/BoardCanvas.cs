@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -122,6 +123,7 @@ namespace LifeGame.Model
                 }
             }
         }
+
 
 
         public void ChangeBoard(Board board)
@@ -285,6 +287,58 @@ namespace LifeGame.Model
         /// </summary>
         public TimeSpan UpdateInterval { get; set; }
     
+
+
+
+        /// <summary>
+        /// Boardオブジェクトが変更されたときに呼び出されるイベントハンドラ
+        /// UIスレッドとは別スレッドで動作していた場合を考慮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void board_Changed(object sender, BoardChangedEventArgs e)
+        {
+ 	        Thread.Sleep(UpdateInterval);
+
+            Panel.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                UpdatePiece(e.Location, e.Piece);
+            }));
+        }
+
+
+        /// <summary>
+        /// Pieceの描画を更新する
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <param name="piece"></param>
+        private void UpdatePiece(Location loc,IPiece piece)
+        {
+            if (piece == null || piece is EmptyPiece)
+            {
+                RemovePiece(loc);
+            }
+            else
+            {
+                var name = PieceName(loc);
+                object obj = Panel.FindName(name);
+
+                if (obj != null)
+                {
+                    Panel.Children.Remove(obj as UIElement);
+                }
+
+                if (piece is EmptyPiece || piece is GuardPiece)
+                {
+                    return;
+                }
+
+                DrawPiece(loc, piece);
+            }
+        }
+
+
+
 
 
 
