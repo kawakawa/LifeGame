@@ -105,7 +105,7 @@ namespace LifeGame.Model
                 {
                     if (_synchronize == false)
                     {
-                        this.Board.Changed += new EventHandler<BoardChangedEventArgs>(board_Changed);
+                        this.Board.Changed += board_Changed;
                         _synchronize = true;
                     }
                 }
@@ -113,7 +113,7 @@ namespace LifeGame.Model
                 {
                     if (_synchronize == true)
                     {
-                        this.Board.Changed -=new EventHandler<BoardChangedEventArgs>(board_Changed);
+                        this.Board.Changed -=board_Changed;
                         _synchronize = false;
                     }
                 }
