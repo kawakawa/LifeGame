@@ -147,7 +147,7 @@ namespace LifeGame.Model
         {
             if (0 <= index && index < _pieces.Length)
             {
-                return this._pieces[index] != Pieces.Guard;
+                return this[index] != Pieces.Guard;
             }
             return false;
         }
