@@ -359,7 +359,7 @@ namespace LifeGame.Model
         /// 指定した位置のPieceを取り除く
         /// </summary>
         /// <param name="loc"></param>
-        private void RemovePiece(Location loc)
+        protected void RemovePiece(Location loc)
         {
             var name = PieceName(loc);
             object obj = Panel.FindName(name);
