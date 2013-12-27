@@ -259,8 +259,26 @@ namespace LifeGame.Model
         }
 
 
+        /// <summary>
+        ///  Boardの内容に沿って、Pieceを描画しなおす
+        ///  UIスレッドとは別スレッドで動作していた場合を考慮。
+        /// </summary>
+        public void Invalidate()
+        {
+            Panel.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                foreach (var loc in Board.GetValidLocations())
+                {
+                    this.RemovePiece(loc);
+                }
 
-
+                foreach (var loc in Board.GetValidLocations())
+                {
+                    var piece = Board[loc];
+                    UpdatePiece(loc, piece);
+                }
+            }));
+        }
 
 
 
