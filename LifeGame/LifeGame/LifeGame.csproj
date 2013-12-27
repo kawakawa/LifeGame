@@ -75,7 +75,7 @@
     <Compile Include="Model\Drawer.cs" />
     <Compile Include="Model\Piece\EmptyPiece.cs" />
     <Compile Include="Model\Piece\GuardPiece.cs" />
-    <Compile Include="Model\IColorPiece.cs" />
+    <Compile Include="Model\Piece\IColorPiece.cs" />
     <Compile Include="Model\Piece\IPiece.cs" />
     <Compile Include="Model\LifeBoard.cs" />
     <Compile Include="Model\Location.cs" />

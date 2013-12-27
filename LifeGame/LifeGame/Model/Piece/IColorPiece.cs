@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace LifeGame.Model
+namespace LifeGame.Model.Piece
 {
     /// <summary>
     /// 色をもつ駒
