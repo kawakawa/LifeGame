@@ -337,6 +337,7 @@ namespace LifeGame.Model
             }
         }
 
+
         /// <summary>
         /// Pieceを描く。 デフォルト実装は、IColorPieceのみに対応。
         /// 他のPiece型は、独自に当メソッドをoverrideする必要がある。
@@ -354,7 +355,19 @@ namespace LifeGame.Model
         }
 
 
-
+        /// <summary>
+        /// 指定した位置のPieceを取り除く
+        /// </summary>
+        /// <param name="loc"></param>
+        private void RemovePiece(Location loc)
+        {
+            var name = PieceName(loc);
+            object obj = Panel.FindName(name);
+            if (obj != null)
+            {
+                Panel.Children.Remove(obj as UIElement);
+            }
+        }
 
 
 
