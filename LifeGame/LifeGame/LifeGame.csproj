@@ -72,6 +72,7 @@
     <Compile Include="Model\BoardCanvas.cs" />
     <Compile Include="Model\BoardChangedEventArgs.cs" />
     <Compile Include="Model\Cell.cs" />
+    <Compile Include="Model\Drawer.cs" />
     <Compile Include="Model\EmptyPiece.cs" />
     <Compile Include="Model\GuardPiece.cs" />
     <Compile Include="Model\IColorPiece.cs" />
