@@ -337,6 +337,22 @@ namespace LifeGame.Model
             }
         }
 
+        /// <summary>
+        /// Pieceを描く。 デフォルト実装は、IColorPieceのみに対応。
+        /// 他のPiece型は、独自に当メソッドをoverrideする必要がある。
+        /// なお、overrideした DrawPiece内では、DrawRectangleメソッドは利用できない。
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <param name="piece"></param>
+        private void DrawPiece(Location loc,IPiece piece)
+        {
+            var colorPiece = piece as IColorPiece;
+            if (colorPiece != null)
+            {
+                Panel.Children.Add(CreateEllipse(loc, colorPiece.Color));
+            }
+        }
+
 
 
 
