@@ -26,7 +26,7 @@ namespace LifeGame.Model
         public int Xsize { get; private set; }
 
         // _pieces配列に変更があるとChangeイベントが発生する。
-        private event EventHandler<BoardChangedEventArgs> Changed;
+        public event EventHandler<BoardChangedEventArgs> Changed;
 
 
         /// <summary>
