@@ -280,8 +280,11 @@ namespace LifeGame.Model
             }));
         }
 
-
-
+        /// <summary>
+        /// UIスレッドとは別スレッドで動作させている時だけ意味を持つ。
+        /// </summary>
+        public TimeSpan UpdateInterval { get; set; }
+    
 
 
 
