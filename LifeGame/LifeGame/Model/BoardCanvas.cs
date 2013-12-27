@@ -185,12 +185,14 @@ namespace LifeGame.Model
         /// <returns></returns>
         public Ellipse CreateEllipse(Location loc, Color color)
         {
-            var eli = new Ellipse();
-            eli.Name = PieceName(loc);
-            eli.Height = CellWidth*0.85;
-            eli.Width = CellHeight*0.85;
-            eli.Fill=new SolidColorBrush(color);
-            eli.Stroke = new SolidColorBrush(Colors.DarkGray);
+            var eli = new Ellipse
+            {
+                Name = PieceName(loc),
+                Height = CellWidth*0.85,
+                Width = CellHeight*0.85,
+                Fill = new SolidColorBrush(color),
+                Stroke = new SolidColorBrush(Colors.DarkGray)
+            };
 
             var pt = ToPoint(loc);
             Canvas.SetLeft(eli,pt.X+CellWidth/2-eli.ActualWidth/2);
