@@ -221,14 +221,42 @@ namespace LifeGame.Model
         }
 
 
-
+        /// <summary>
+        /// 四角形を精製する
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <param name="color"></param>
+        /// <returns></returns>
         public Rectangle CreateRectangle(Point p1,Point p2,Color color)
         {
- 	        
+            var rect = new Rectangle();
+            rect.Name = RectangleName(p1);
+            rect.Stroke=new SolidColorBrush(color);
+
+            double x1 = Math.Min(p1.X, p2.X);
+            double y1 = Math.Min(p1.Y, p2.Y);
+            double x2 = Math.Min(p1.X, p2.X);
+            double y2 = Math.Min(p1.Y, p2.Y);
+
+            rect.Margin= new Thickness(x1,y1,x2,y2);
+            rect.Width = x2 - x1;
+            rect.Height = y2 - y1;
+            return rect;
+
         }
 
 
-
+        /// <summary>
+        /// 矩形の名前を得る
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <returns></returns>
+        protected string RectangleName(Point p1)
+        {
+            var val = string.Format("r{0}{1}", (int) p1.X, (int) p1.Y);
+            return val;
+        }
 
 
 
