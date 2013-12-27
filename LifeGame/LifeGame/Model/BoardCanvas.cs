@@ -345,7 +345,7 @@ namespace LifeGame.Model
         /// </summary>
         /// <param name="loc"></param>
         /// <param name="piece"></param>
-        private void DrawPiece(Location loc,IPiece piece)
+        public virtual void DrawPiece(Location loc,IPiece piece)
         {
             var colorPiece = piece as IColorPiece;
             if (colorPiece != null)
