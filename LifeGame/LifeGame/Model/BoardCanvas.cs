@@ -302,10 +302,7 @@ namespace LifeGame.Model
         {
  	        Thread.Sleep(UpdateInterval);
 
-            Panel.Dispatcher.BeginInvoke(new Action(() =>
-            {
-                UpdatePiece(e.Location, e.Piece);
-            }));
+            Panel.Dispatcher.BeginInvoke(new Action(() => UpdatePiece(e.Location, e.Piece)));
         }
 
 
