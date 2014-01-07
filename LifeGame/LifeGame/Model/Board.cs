@@ -11,6 +11,7 @@ namespace LifeGame.Model
     public class Board
     {
         // 駒が配置される１次元配列 （周辺には番兵が置かれる）
+        // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private IPiece[] _pieces;
 
         // 番兵以外の有効な位置(１次元のインデックス）が格納される
@@ -111,7 +112,7 @@ namespace LifeGame.Model
         /// <summary>
         /// IndexからLocationを求める
         /// </summary>
-        /// <param name="i"></param>
+        /// <param name="index"></param>
         /// <returns></returns>
         public Location ToLocation(int index)
         {
@@ -285,7 +286,7 @@ namespace LifeGame.Model
         /// <returns></returns>
         public IEnumerable<Location> GetValidLocations()
         {
-            var query = _validIndexes.Select(n => ToLocation(n));
+            var query = _validIndexes.Select(ToLocation);
             return query;
         }
 
@@ -305,7 +306,7 @@ namespace LifeGame.Model
         public IEnumerable<Location> GetOccupiedLocations()
         {
             var query = this.GetOccupiedIndexes()
-                .Select(idx => ToLocation(idx));
+                .Select(ToLocation);
             return query;
         }
 
@@ -326,7 +327,7 @@ namespace LifeGame.Model
         /// <returns></returns>
         public IEnumerable<Location> GetVacantLocations()
         {
-            var query = this._validIndexes.Select(idx => ToLocation(idx));
+            var query = this._validIndexes.Select(ToLocation);
             return query;
         }
 
